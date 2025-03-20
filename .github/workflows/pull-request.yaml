@@ -1,0 +1,29 @@
+name: Pull Request Checks
+
+on: [pull_request]
+
+jobs:
+  check:
+    name: "Pull request check"
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check formatting
+        run: yarn prettier-check
+
+      - name: Check formatting
+        run: yarn eslint-check
+
+      - name: Validate Semantic Release
+        run: npx semantic-release --dry-run
+
+      - name: Build Plugin
+        run: yarn prod

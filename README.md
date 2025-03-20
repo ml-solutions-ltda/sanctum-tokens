@@ -78,6 +78,8 @@ public function fields(Request $request)
 
 Publish the package language files to your application's `resources/lang/vendor` directory:
 
-```
+```shell
 php artisan vendor:publish --provider="MetasyncSite\SanctumTokens\ToolServiceProvider" --tag="sanctum-tokens-migrations"
+
+php artisan migrate
 ```

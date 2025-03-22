@@ -19,9 +19,15 @@ This package allows you to use [Sanctum](https://laravel.com/docs/12.x/sanctum) 
    - Laravel 10.x, 11.x, 12.x
 
 ## Installation
-
-```
+```shell
 composer require metasync-site/sanctum-tokens
+```
+
+```shell
+php artisan vendor:publish --provider="MetasyncSite\SanctumTokens\ToolServiceProvider" --tag="sanctum-tokens-migrations"
+```
+```shell
+php artisan migrate
 ```
 
 Register the plugin by adding `SanctumTokens::make()` to the array of fields in the Nova resource. Make sure the
@@ -77,9 +83,3 @@ public function fields(Request $request)
 ### Localization
 
 Publish the package language files to your application's `resources/lang/vendor` directory:
-
-```shell
-php artisan vendor:publish --provider="MetasyncSite\SanctumTokens\ToolServiceProvider" --tag="sanctum-tokens-migrations"
-
-php artisan migrate
-```

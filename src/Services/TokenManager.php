@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace MetasyncSite\SanctumTokens\Services;
 
 use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use MetasyncSite\SanctumTokens\Exception\MetasyncSiteSanctumTokenException;
 use MetasyncSite\SanctumTokens\Models\StoredTokens;

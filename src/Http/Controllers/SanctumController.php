@@ -35,6 +35,7 @@ class SanctumController
         /** @var PersonalAccessToken $accessToken */
         $accessToken = $token->accessToken;
         $accessToken->description = $request->description;
+        $accessToken->expires_at = $request->expiresAt;
         $accessToken->save();
 
         $this->tokenManager->createToken($accessToken->id, $token->plainTextToken);

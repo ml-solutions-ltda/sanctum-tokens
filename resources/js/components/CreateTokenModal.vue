@@ -63,6 +63,25 @@
                 {{ __("Comma separated list of abilities to apply to token.") }}
               </p>
             </div>
+
+            <div
+                class="flex flex-col space-y-2 mt-3"
+            >
+              <label for="abilities" class="inline-block leading-tight">
+                {{ __("Expires at") }} {{currentDate}}
+              </label>
+              <input
+                  id="expires_at"
+                  v-model="tokenExpiresAt"
+                  type="datetime-local"
+                  :min="currentDate"
+                  class="w-full form-control form-input form-control-bordered"
+              />
+              <p>
+                {{ __("Token life time") }}
+              </p>
+            </div>
+
           </div>
         </ModalContent>
       </slot>
@@ -94,6 +113,7 @@
 
 <script>
 import { Button as NovaButton } from "laravel-nova-ui";
+import dayjs from "dayjs";
 
 export default {
   components: {
@@ -112,11 +132,13 @@ export default {
       tokenName: null,
       tokenAbilities: null,
       tokenDescription: null,
+      tokenExpiresAt: null,
+      currentDate: dayjs().toISOString()
     };
   },
   methods: {
     handleCreate() {
-      this.$emit("create", this.tokenName, this.tokenAbilities, this.tokenDescription);
+      this.$emit("create", this.tokenName, this.tokenAbilities, this.tokenDescription, this.tokenExpiresAt);
       this.resetForm();
     },
     handleCancelled() {
@@ -127,6 +149,7 @@ export default {
       this.tokenName = null;
       this.tokenAbilities = null;
       this.tokenDescription = null;
+      this.tokenExpiresAt = null;
     },
   },
 };

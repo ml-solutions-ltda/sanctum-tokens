@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MetasyncSite\SanctumTokens;
 
 use Laravel\Nova\ResourceTool;
@@ -20,8 +22,6 @@ class SanctumTokens extends ResourceTool
 
     /**
      * Get the displayable name of the resource tool.
-     *
-     * @return string
      */
     public function name(): string
     {
@@ -54,8 +54,6 @@ class SanctumTokens extends ResourceTool
 
     /**
      * Get the component name for the resource tool.
-     *
-     * @return string
      */
     public function component(): string
     {

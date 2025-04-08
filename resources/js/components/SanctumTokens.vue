@@ -104,7 +104,7 @@ export default {
     this.fetchTokens();
   },
   methods: {
-    createNewToken(tokenName, tokenAbilities, description) {
+    createNewToken(tokenName, tokenAbilities, description, tokenExpiresAt) {
       this.showCreateTokenModal = false;
       Nova.request()
           .post(
@@ -112,6 +112,7 @@ export default {
               {
                 name: tokenName,
                 description: description,
+                expiresAt: tokenExpiresAt,
                 abilities:
                     tokenAbilities === null
                         ? this.panel.fields[0].defaultAbilities

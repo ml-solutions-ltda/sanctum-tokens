@@ -12,9 +12,6 @@ use MetasyncSite\SanctumTokens\Services\TokenManager;
 
 class TokenController extends Controller
 {
-    /**
-     * @var TokenManager
-     */
     protected TokenManager $tokenManager;
 
     public function __construct(TokenManager $tokenManager)

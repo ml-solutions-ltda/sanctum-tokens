@@ -7,7 +7,6 @@ namespace MetasyncSite\SanctumTokens\Models;
 use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 /**
- *
  * @property int $id
  */
 class PersonalAccessToken extends SanctumPersonalAccessToken
@@ -18,6 +17,7 @@ class PersonalAccessToken extends SanctumPersonalAccessToken
         'abilities',
         'description',
         'last_used_at',
+        'expires_at',
     ];
 
     protected $casts = [

@@ -68,7 +68,7 @@
                 class="flex flex-col space-y-2 mt-3"
             >
               <label for="abilities" class="inline-block leading-tight">
-                {{ __("Expires at") }} {{currentDate}}
+                {{ __("Expires at") }}
               </label>
               <input
                   id="expires_at"

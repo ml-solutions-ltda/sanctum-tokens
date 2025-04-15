@@ -15,8 +15,8 @@ This package allows you to use [Sanctum](https://laravel.com/docs/12.x/sanctum) 
 
 1. [Install and Configure Sanctum](https://laravel.com/docs/12.x/sanctum#installation)
 2. [Have Laravel Nova](https://nova.laravel.com/)
-   - Support - Nova 4.x Nova 5.x
-   - Laravel 10.x, 11.x, 12.x
+   - Support - Nova 4.x | Nova 5.x
+   - Laravel 10.x | 11.x | 12.x
 
 ## Installation
 ```shell

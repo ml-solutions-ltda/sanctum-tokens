@@ -13,10 +13,12 @@ class TokenManager
 {
     public function createToken(int $tokenId, string $plainTextToken): string
     {
+        $currentUser = auth(config('nova.guard'))->id();
+
         StoredTokens::query()->create([
             'token_id' => $tokenId,
             'encrypted_token' => Crypt::encryptString($plainTextToken),
-            'created_by' => auth()->id(),
+            'created_by' => $currentUser,
             'is_viewable' => true,
             'viewable_until' => now()->addDays(config('sanctum-tokens.viewable_days', 7)),
         ]);
@@ -24,7 +26,7 @@ class TokenManager
         if (config('app.debug')) {
             Log::info('Token created', [
                 'token_id' => $tokenId,
-                'admin_id' => auth()->id(),
+                'admin_id' => $currentUser,
             ]);
         }
 
@@ -54,7 +56,7 @@ class TokenManager
         if (config('app.debug')) {
             Log::warning('Token viewed', [
                 'token_id' => $tokenId,
-                'admin_id' => auth()->id(),
+                'admin_id' => auth(config('nova.guard'))->id(),
                 'ip' => request()->ip(),
             ]);
         }

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace MetasyncSite\SanctumTokens\Services;
+namespace MlSolutions\SanctumTokens\Services;
 
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
-use MetasyncSite\SanctumTokens\Exception\MetasyncSiteSanctumTokenException;
-use MetasyncSite\SanctumTokens\Models\StoredTokens;
+use MlSolutions\SanctumTokens\Exception\MlSolutionsSanctumTokenException;
+use MlSolutions\SanctumTokens\Models\StoredTokens;
 
 class TokenManager
 {
-    public function createToken(int $tokenId, string $plainTextToken): string
+    public function createToken(string|int $tokenId, string $plainTextToken): string
     {
         $currentUser = auth(config('nova.guard'))->id();
 
@@ -34,23 +34,23 @@ class TokenManager
     }
 
     /**
-     * @throws MetasyncSiteSanctumTokenException
+     * @throws MlSolutionsSanctumTokenException
      */
-    public function retrieveToken(int $tokenId): string
+    public function retrieveToken(string|int $tokenId): string
     {
         $storedToken = StoredTokens::query()->where('token_id', $tokenId)
             ->first();
 
         if (! $storedToken) {
-            throw new MetasyncSiteSanctumTokenException('Token not found');
+            throw new MlSolutionsSanctumTokenException('Token not found');
         }
 
         if (! $storedToken->is_viewable) {
-            throw new MetasyncSiteSanctumTokenException('Token is no longer viewable');
+            throw new MlSolutionsSanctumTokenException('Token is no longer viewable');
         }
 
         if ($storedToken->viewable_until && now()->gt($storedToken->viewable_until)) {
-            throw new MetasyncSiteSanctumTokenException('Token view period has expired');
+            throw new MlSolutionsSanctumTokenException('Token view period has expired');
         }
 
         if (config('app.debug')) {

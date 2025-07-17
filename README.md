@@ -20,11 +20,11 @@ This package allows you to use [Sanctum](https://laravel.com/docs/12.x/sanctum) 
 
 ## Installation
 ```shell
-composer require metasync-site/sanctum-tokens
+composer require mlsolutions/sanctum-tokens
 ```
 
 ```shell
-php artisan vendor:publish --provider="MetasyncSite\SanctumTokens\ToolServiceProvider" --tag="sanctum-tokens-migrations"
+php artisan vendor:publish --provider="MlSolutions\SanctumTokens\ToolServiceProvider" --tag="sanctum-tokens-migrations"
 ```
 ```shell
 php artisan migrate
@@ -34,7 +34,7 @@ Register the plugin by adding `SanctumTokens::make()` to the array of fields in 
 `HasApiTokens` trait from the Sanctum package has been added to your model.
 
 ```php
-use MetasyncSite\SanctumTokens\SanctumTokens;
+use MlSolutions\SanctumTokens\SanctumTokens;
 
 public function fields(Request $request)
 {
@@ -52,7 +52,7 @@ public function fields(Request $request)
 You can hide the reference to the token abilities from the UI by calling the `hideAbilities()` method on the field.
 
 ```php
-use MetasyncSite\SanctumTokens\SanctumTokens;
+use MlSolutions\SanctumTokens\SanctumTokens;
 
 public function fields(Request $request)
 {
@@ -70,7 +70,7 @@ If you don't want to use the default `*` token ability you can set your own by s
 This works well with the the `hideAbilities()` method if you want to hide the abilities logic from your users.
 
 ```php
-use MetasyncSite\SanctumTokens\SanctumTokens;
+use MlSolutions\SanctumTokens\SanctumTokens;
 
 public function fields(Request $request)
 {

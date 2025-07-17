@@ -1,5 +1,5 @@
 {
-  "name": "metasync-site/sanctum-tokens",
+  "name": "mlsolutions/sanctum-tokens",
   "description": "A Laravel Nova resource tool for sanctum tokens.",
   "keywords": [
     "laravel",
@@ -13,13 +13,13 @@
   },
   "autoload": {
     "psr-4": {
-      "MetasyncSite\\SanctumTokens\\": "src/"
+      "MlSolutions\\SanctumTokens\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "MetasyncSite\\SanctumTokens\\ToolServiceProvider"
+        "MlSolutions\\SanctumTokens\\ToolServiceProvider"
       ]
     }
   },

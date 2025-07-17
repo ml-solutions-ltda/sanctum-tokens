@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MetasyncSite\SanctumTokens;
+namespace MlSolutions\SanctumTokens;
 
 use Laravel\Nova\ResourceTool;
 

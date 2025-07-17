@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use MetasyncSite\SanctumTokens\Http\Controllers\SanctumController;
-use MetasyncSite\SanctumTokens\Http\Controllers\TokenController;
+use MlSolutions\SanctumTokens\Http\Controllers\SanctumController;
+use MlSolutions\SanctumTokens\Http\Controllers\TokenController;
 
 /*
 |--------------------------------------------------------------------------

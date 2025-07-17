@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MetasyncSite\SanctumTokens\Models;
+namespace MlSolutions\SanctumTokens\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

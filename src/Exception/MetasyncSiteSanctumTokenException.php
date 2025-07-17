@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-namespace MetasyncSite\SanctumTokens\Exception;
+namespace MlSolutions\SanctumTokens\Exception;
 
 use Exception;
 
-class MetasyncSiteSanctumTokenException extends Exception {}
+class MlSolutionsSanctumTokenException extends Exception {}

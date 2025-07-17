@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MetasyncSite\SanctumTokens\Http\Controllers;
+namespace MlSolutions\SanctumTokens\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Nova;
-use MetasyncSite\SanctumTokens\Models\PersonalAccessToken;
-use MetasyncSite\SanctumTokens\Services\TokenManager;
+use MlSolutions\SanctumTokens\Models\PersonalAccessToken;
+use MlSolutions\SanctumTokens\Services\TokenManager;
 
 class SanctumController
 {

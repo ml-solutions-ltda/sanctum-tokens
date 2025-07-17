@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MetasyncSite\SanctumTokens;
+namespace MlSolutions\SanctumTokens;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;

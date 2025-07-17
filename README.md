@@ -1,4 +1,4 @@
-# Create a Sanctum Personal Access Tokens in Nova
+# Create a Sanctum Personal Access Tokens in Nova With ID UUID
 
 This package allows you to use [Sanctum](https://laravel.com/docs/12.x/sanctum) to generate a Personal Access Tokens in [Nova](https://nova.laravel.com/).
 
